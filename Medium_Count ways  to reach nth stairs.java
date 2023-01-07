@@ -8,10 +8,10 @@ class Solution
         int prev=1,prev2=1;
         for(int i=2;i<=n;i++){
             int curr=(prev+prev2)%mod;
-            prev=prev2;
-            prev2=curr;
+            prev2=prev;
+            prev=curr;
         }
-        return prev2;
+        return prev;
     }
     
 }
