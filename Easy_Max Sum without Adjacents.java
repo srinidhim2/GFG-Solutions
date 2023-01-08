@@ -19,4 +19,22 @@ class Solution {
         return f(arr,dp,n-1);
         
     }
+    
+    //===================OR=========================
+    int findMaxSum(int arr[], int n) {
+        int prev=arr[0];
+        int prev2=0;
+        for(int i=1;i<n;i++){
+            int pick=arr[i];
+            if(i>1)
+                pick+=prev2;
+            int non_pick=0+prev;
+            int curr=Math.max(pick,non_pick);
+            prev2=prev;
+            prev=curr;
+            
+        }
+        return prev;
+        
+    }
 }
